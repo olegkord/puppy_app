@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #WILL NEED TO SET UP FOR TOKEN LATER
+  has_secure_password
 
   has_many :posts
   has_many :comments

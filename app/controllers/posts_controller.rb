@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate except: :index
 
   def index
     render json: Post.all
@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 
 
   def post_params
-
 
   end
 

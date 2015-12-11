@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate except: :create
+  before_action :authenticate, except: [:create, :new]
 
   def index
     render json: User.all
@@ -7,6 +7,10 @@ class UsersController < ApplicationController
 
   def show
     render json: User.find(params[:id])
+  end
+
+  def new
+    render 'new'
   end
 
   def create
